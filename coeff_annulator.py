@@ -1,4 +1,4 @@
-system_equation = [[-4, 2, -21], [20, 11, 5], [0, 0, 0]]
+system_equation = [[3, 1, 2], [5, 2, 3], [0, 0, 0]]
 
 
 def coeff_dir_comp(list_xy, coeff_x_y):
@@ -188,8 +188,8 @@ def resolve_sys_equation(list_xy, coeff_an):
             x = 1 / list_xy[0][0] * (list_xy[0][2] - list_xy[0][1] * y)
             print("S : {" + f'{x} ; {y} ' + "}")
     elif type(coeff_an) == list:
-        y = 1
-        x = 1
+        y = (coeff_an[1]*list_xy[0][2] + list_xy[1][2]*coeff_an[0]) /((coeff_an[1]*list_xy[0][1] + list_xy[1][1]*coeff_an[0]) )
+        x =   x = 1 / list_xy[0][0] * (list_xy[0][2] - list_xy[0][1] * y)
         print("S : {" + f'{x} ; {y} ' + "}")
 
     else:
