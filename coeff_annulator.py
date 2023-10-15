@@ -1,4 +1,4 @@
-system_equation = [[-1, 2, -2], [6, 1, 5], [0, 0, 0]]
+system_equation = [[-4, 2, -21], [20, 11, 5], [0, 0, 0]]
 
 
 def coeff_dir_comp(list_xy, coeff_x_y):
@@ -35,7 +35,7 @@ def coeff_dir_comp(list_xy, coeff_x_y):
     elif list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] == 0 and (
             list_xy[0][coeff_x_y] > 0 and list_xy[1][coeff_x_y] > 0):
 
-        for x in range(list_xy[0][coeff_x_y] + 1 // 2):
+        for x in range(list_xy[0][coeff_x_y] + 1 ):
             alpha = x
             if list_xy[0][coeff_x_y] == list_xy[1][coeff_x_y] * x:
                 print("coeff_director is :")
@@ -44,7 +44,7 @@ def coeff_dir_comp(list_xy, coeff_x_y):
                 print("+")
     elif list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] == 0 and (
             list_xy[0][coeff_x_y] > 0 > list_xy[1][coeff_x_y]):
-        for x in range(list_xy[0][coeff_x_y] + 1 // 2):
+        for x in range(list_xy[0][coeff_x_y] + 1 ):
             alpha = x
             if list_xy[0][coeff_x_y] == list_xy[1][coeff_x_y] * (x * -1):
                 print("coeff_director is :")
@@ -54,7 +54,7 @@ def coeff_dir_comp(list_xy, coeff_x_y):
 
     elif list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] == 0 and (
             list_xy[0][coeff_x_y] < 0 < list_xy[1][coeff_x_y]):
-        for x in range((-1 * list_xy[0][coeff_x_y]) + 1 // 2):
+        for x in range((-1 * list_xy[0][coeff_x_y]) + 1 ):
             alpha = x
             if list_xy[0][coeff_x_y] == list_xy[1][coeff_x_y] * (x * -1):
                 print("coeff_director is :")
@@ -65,7 +65,7 @@ def coeff_dir_comp(list_xy, coeff_x_y):
 
     elif list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] == 0 and (
             list_xy[0][coeff_x_y] < 0 and list_xy[1][coeff_x_y] < 0):
-        for x in range((-1 * list_xy[0][coeff_x_y]) + 1 // 2):
+        for x in range((-1 * list_xy[0][coeff_x_y]) + 1):
             alpha = x
             if (list_xy[0][coeff_x_y] == list_xy[1][coeff_x_y] * (x)):
                 print("coeff_director is :")
@@ -77,27 +77,30 @@ def coeff_dir_comp(list_xy, coeff_x_y):
 
     elif list_xy[1][coeff_x_y] % list_xy[0][coeff_x_y] == 0 and (
             list_xy[0][coeff_x_y] < 0 and list_xy[1][coeff_x_y] < 0):
-        for x in range((-1 * list_xy[1][coeff_x_y]) + 1 // 2):
+        for x in range((-1 * list_xy[1][coeff_x_y]) + 1 ):
             alpha = x
             if (list_xy[1][coeff_x_y] == list_xy[0][coeff_x_y] * (x)):
                 print("coeff_director is :")
+                
                 return -1 * alpha
             else:
                 print("+")
 
     elif list_xy[1][coeff_x_y] % list_xy[0][coeff_x_y] == 0 and (
             list_xy[0][coeff_x_y] < 0 < list_xy[1][coeff_x_y]):
-        for x in range(list_xy[1][coeff_x_y] + 1 // 2):
+        print("inside123")
+        for x in range(list_xy[1][coeff_x_y] + 1 ):
             alpha = x
             if list_xy[1][coeff_x_y] == list_xy[0][coeff_x_y] * (-1 * x):
                 print("coeff_director is :")
+                print(alpha)
                 return alpha
-            else:
-                print("+")
+        
+            
 
     elif list_xy[1][coeff_x_y] % list_xy[0][coeff_x_y] == 0 and (
             list_xy[0][coeff_x_y] > 0 > list_xy[1][coeff_x_y]):
-        for x in range((-1 * list_xy[1][coeff_x_y]) + 1 // 2):
+        for x in range((-1 * list_xy[1][coeff_x_y]) + 1 +1):
             alpha = x
             if list_xy[1][coeff_x_y] == list_xy[0][coeff_x_y] * (-1 * x):
                 print("coeff_director is :")
@@ -107,7 +110,7 @@ def coeff_dir_comp(list_xy, coeff_x_y):
 
     elif list_xy[1][coeff_x_y] % list_xy[0][coeff_x_y] == 0 and (
             list_xy[0][coeff_x_y] > 0 and list_xy[1][coeff_x_y] > 0):
-        for x in range((list_xy[1][coeff_x_y]) + 1 // 2):
+        for x in range((list_xy[1][coeff_x_y]) + 1 +1):
             alpha = x
             if (list_xy[1][coeff_x_y] == list_xy[0][coeff_x_y] * (x)):
                 print("coeff_director is :")
@@ -116,7 +119,7 @@ def coeff_dir_comp(list_xy, coeff_x_y):
                 print("+")
 
     else:
-        print("process not finish yet")
+        print("Error - it is  a incompatible situation with this function-1 \n")
 
 
 def coeff_dir_incomp(list_xy, coeff_x_y):
@@ -166,7 +169,7 @@ def coeff_dir_incomp(list_xy, coeff_x_y):
             return result_coeff
 
     else:
-        print("Error - it is  a incompatible situation with this function \n")
+        print("Error - it is  a incompatible situation with this function-2 \n")
 
 
 # result  = coeff_dir_comp(system_equation , 0)
@@ -174,10 +177,16 @@ def coeff_dir_incomp(list_xy, coeff_x_y):
 
 def resolve_sys_equation(list_xy, coeff_an):
     print('coeff :', coeff_an)
+    
     if isinstance(coeff_an, float) or isinstance(coeff_an, int):
-        y = (coeff_an * list_xy[0][2] + list_xy[1][2]) / (coeff_an * list_xy[0][1] + list_xy[1][1])
-        x = 1 / list_xy[0][0] * (list_xy[0][2] - list_xy[0][1] * y)
-        print("S : {" + f'{x} ; {y} ' + "}")
+       if list_xy[0][0] >= list_xy[1][0]:
+            y = (coeff_an * list_xy[0][2] + list_xy[1][2]) / (coeff_an * list_xy[0][1] + list_xy[1][1])
+            x = 1 / list_xy[0][0] * (list_xy[0][2] - list_xy[0][1] * y)
+            print("S : {" + f'{x} ; {y} ' + "}")
+       else :
+            y = ( list_xy[0][2] + coeff_an *list_xy[1][2]) / ( list_xy[0][1] + coeff_an *list_xy[1][1])
+            x = 1 / list_xy[0][0] * (list_xy[0][2] - list_xy[0][1] * y)
+            print("S : {" + f'{x} ; {y} ' + "}")
     elif type(coeff_an) == list:
         y = 1
         x = 1
@@ -194,8 +203,10 @@ def displays_sys_equation(list_xy, nbrVar, list_var=None):
 
 
 displays_sys_equation(system_equation, 2)
-if system_equation[0][0] % system_equation[1][0] == 0 == system_equation[1][0] % system_equation[0][0]:
+if system_equation[0][0] % system_equation[1][0] == 0 or 0 == system_equation[1][0] % system_equation[0][0]:
+    print("compatible")
     coeff = coeff_dir_comp(system_equation, 0)
 else:
+    print("incompatible")
     coeff = coeff_dir_incomp(system_equation, 0)
 resolve_sys_equation(system_equation, coeff)
