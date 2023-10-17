@@ -73,14 +73,11 @@ def coeff_dir_comp(list_xy, coeff_x_y):
         for x in range((-1 * list_xy[1][coeff_x_y]) + 1 ):
             alpha = x
             if (list_xy[1][coeff_x_y] == list_xy[0][coeff_x_y] * (x)):
-                print("coeff_director is :")
-                
                 return -1 * alpha
             
 
     elif list_xy[1][coeff_x_y] % list_xy[0][coeff_x_y] == 0 and (
             list_xy[0][coeff_x_y] < 0 < list_xy[1][coeff_x_y]):
-        print("inside123")
         for x in range(list_xy[1][coeff_x_y] + 1 ):
             alpha = x
             if list_xy[1][coeff_x_y] == list_xy[0][coeff_x_y] * (-1 * x):
@@ -116,51 +113,56 @@ def coeff_dir_comp(list_xy, coeff_x_y):
 def coeff_dir_incomp(list_xy, coeff_x_y):
     result_coeff = []
     # x_1 % x_2 != 0 and {x_1 and x_2} > 0
+    if list_xy[0][coeff_x_y] != 0 and 0 != list_xy[1][coeff_x_y] :
+        
+        if (list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] != 0 and list_xy[1][coeff_x_y] % list_xy[0][coeff_x_y] != 0) and (
+                list_xy[0][coeff_x_y] > 0 and list_xy[1][coeff_x_y] > 0):
+            # x_1 > x_2
 
-    if (list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] != 0 and list_xy[1][coeff_x_y] % list_xy[0][coeff_x_y] != 0) and (
-            list_xy[0][coeff_x_y] > 0 and list_xy[1][coeff_x_y] > 0):
-        # x_1 > x_2
+            if list_xy[0][coeff_x_y] > list_xy[1][coeff_x_y]:
 
-        if list_xy[0][coeff_x_y] > list_xy[1][coeff_x_y]:
+                result_coeff.append(list_xy[0][coeff_x_y])
+                result_coeff.append(-1 * list_xy[1][coeff_x_y])
+                print(result_coeff)
+                return result_coeff
+            else:
+                result_coeff.append(list_xy[0][coeff_x_y] * -1)
+                result_coeff.append(list_xy[1][coeff_x_y])
+                return result_coeff
 
+        elif (list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] != 0 and list_xy[1][coeff_x_y] % list_xy[0][
+            coeff_x_y] != 0) and (list_xy[0][coeff_x_y] > 0 and list_xy[1][coeff_x_y] < 0):
             result_coeff.append(list_xy[0][coeff_x_y])
             result_coeff.append(-1 * list_xy[1][coeff_x_y])
-            print(result_coeff)
             return result_coeff
-        else:
+
+        elif (list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] != 0 and list_xy[1][coeff_x_y] % list_xy[0][
+            coeff_x_y] != 0) and (list_xy[0][coeff_x_y] < 0 < list_xy[1][coeff_x_y]):
             result_coeff.append(list_xy[0][coeff_x_y] * -1)
             result_coeff.append(list_xy[1][coeff_x_y])
             return result_coeff
 
-    elif (list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] != 0 and list_xy[1][coeff_x_y] % list_xy[0][
-        coeff_x_y] != 0) and (list_xy[0][coeff_x_y] > 0 and list_xy[1][coeff_x_y] < 0):
-        result_coeff.append(list_xy[0][coeff_x_y])
-        result_coeff.append(-1 * list_xy[1][coeff_x_y])
-        return result_coeff
+        elif (list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] != 0 and list_xy[1][coeff_x_y] % list_xy[0][
+            coeff_x_y] != 0) and (list_xy[0][coeff_x_y] < 0 and list_xy[1][coeff_x_y] < 0):
+            if list_xy[0][coeff_x_y] > list_xy[1][coeff_x_y]:
 
-    elif (list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] != 0 and list_xy[1][coeff_x_y] % list_xy[0][
-        coeff_x_y] != 0) and (list_xy[0][coeff_x_y] < 0 < list_xy[1][coeff_x_y]):
-        result_coeff.append(list_xy[0][coeff_x_y] * -1)
-        result_coeff.append(list_xy[1][coeff_x_y])
-        return result_coeff
+                result_coeff.append(list_xy[0][coeff_x_y])
+                result_coeff.append(-1 * list_xy[1][coeff_x_y])
+                print(result_coeff)
+                return result_coeff
+            else:
 
-    elif (list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] != 0 and list_xy[1][coeff_x_y] % list_xy[0][
-        coeff_x_y] != 0) and (list_xy[0][coeff_x_y] < 0 and list_xy[1][coeff_x_y] < 0):
-        if list_xy[0][coeff_x_y] > list_xy[1][coeff_x_y]:
+                result_coeff.append(list_xy[0][coeff_x_y] * -1)
+                result_coeff.append(list_xy[1][coeff_x_y])
+                print(result_coeff)
+                return result_coeff
 
-            result_coeff.append(list_xy[0][coeff_x_y])
-            result_coeff.append(-1 * list_xy[1][coeff_x_y])
-            print(result_coeff)
-            return result_coeff
         else:
+            print("Error - it is  a incompatible situation with this function-2 \n")
+    
+    else :
+        print("ERROR -DIVISION BY ZERO")
 
-            result_coeff.append(list_xy[0][coeff_x_y] * -1)
-            result_coeff.append(list_xy[1][coeff_x_y])
-            print(result_coeff)
-            return result_coeff
-
-    else:
-        print("Error - it is  a incompatible situation with this function-2 \n")
 
 def resolve_sys_equation(list_xy, coeff_an):
     print('coeff :', coeff_an)
@@ -192,15 +194,62 @@ def displays_sys_equation(list_xy, nbrEquation, nbrVar):
         for j in range(nbrVar) :
             print(f' {list_xy[i][j]} {inconnu[j]}  + ' , end=' ') if j < nbrVar-1  else   print(f' {list_xy[i][j]} {inconnu[j]}  = {list_xy[i][j]}')
             
-            
-        
-def returnCoeff (system ) :
-    if system[0][0] % system[1][0] == 0 or 0 == system[1][0] % system[0][0]:
-        print("compatible")
-        coeff = coeff_dir_comp(system, 0)
+                    
+def returnCoeff (system , rang ) :
+    if system[0][rang] % system[1][rang] == 0 or 0 == system[1][rang] % system[0][rang] : 
+        coeff = coeff_dir_comp(system, rang)
     else:
-        print("incompatible")
-        coeff = coeff_dir_incomp(system, 0)
+        coeff = coeff_dir_incomp(system, rang)
     
     return coeff
  
+
+def variable_eliminator(myMatrice , coeff):
+    
+    if isinstance(coeff , int) or isinstance( coeff , float) :
+        if coeff == (myMatrice[0][0] * -1) :
+            myMatrice[0] = [coeff * myMatrice[0][i]  for i in range(len(myMatrice[0]))]
+        elif coeff == (myMatrice[1][0] * -1) :
+         myMatrice[1] = [coeff * myMatrice[1][i]  for i in range(len(myMatrice[1]))]
+
+    elif type(coeff) == list :
+        myMatrice[0] = [coeff[1] * myMatrice[0][i]  for i in range(len(myMatrice[0]))]
+        myMatrice[1] = [coeff[0] * myMatrice[1][i]  for i in range(len(myMatrice[1]))]                                                                                                                                                                             
+    else : 
+        print("error")
+
+    myMatrice[1] = [myMatrice[0][i] + myMatrice[1][i] for i in range(len(myMatrice[0]))]
+    return myMatrice
+ 
+ 
+def setSystem(myMatrice):
+    pivot = list()
+    turnExc = 1
+    operator = list()
+    pivot.append(myMatrice[0])
+    operator.append(pivot[0])
+    operator.append(myMatrice[1])
+    coeff = returnCoeff(operator , turnExc)
+    operator = variable_eliminator(operator  , coeff)
+    pivot.append(operator[-1])
+    
+    operator.clear()
+    turnExc += 1
+
+    for i in range(len(pivot)) :
+        print(pivot[i])
+    
+ 
+   
+      
+    
+    
+  
+    
+    
+    
+        
+        
+        
+     
+        
