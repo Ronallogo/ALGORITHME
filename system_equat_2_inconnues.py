@@ -197,7 +197,7 @@ def resolve_sys_equation(list_xy, coeff_an):
 
 
 def displays_sys_equation(list_xy, nbrVar, list_var=None):
-    inconnu = ["x", "y", "z"]
+    inconnu = ["x", "y", "z","u","t"]
     for i in range(nbrVar):
         print(f'| {list_xy[i][0]} {inconnu[0]}  +  {list_xy[i][1]} {inconnu[1]}  = {list_xy[i][2]}  \n')
 
