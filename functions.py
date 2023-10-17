@@ -37,7 +37,7 @@ def coeff_dir_comp(list_xy, coeff_x_y):
         for x in range(list_xy[0][coeff_x_y] + 1 ):
             alpha = x
             if list_xy[0][coeff_x_y] == list_xy[1][coeff_x_y] * x:
-                print("coeff_director is :")
+                
                 return alpha * -1
             else:
                 print("+")
@@ -46,7 +46,7 @@ def coeff_dir_comp(list_xy, coeff_x_y):
         for x in range(list_xy[0][coeff_x_y] + 1 ):
             alpha = x
             if list_xy[0][coeff_x_y] == list_xy[1][coeff_x_y] * (x * -1):
-                print("coeff_director is :")
+                
                 return alpha
             else:
                 print("+")
@@ -55,8 +55,7 @@ def coeff_dir_comp(list_xy, coeff_x_y):
             list_xy[0][coeff_x_y] < 0 < list_xy[1][coeff_x_y]):
         for x in range((-1 * list_xy[0][coeff_x_y]) + 1 ):
             alpha = x
-            if list_xy[0][coeff_x_y] == list_xy[1][coeff_x_y] * (x * -1):
-                print("coeff_director is :")
+            if list_xy[0][coeff_x_y] == list_xy[1][coeff_x_y] * (x * -1): 
                 return alpha
             else:
                 print("+")
@@ -67,7 +66,6 @@ def coeff_dir_comp(list_xy, coeff_x_y):
         for x in range((-1 * list_xy[0][coeff_x_y]) + 1):
             alpha = x
             if (list_xy[0][coeff_x_y] == list_xy[1][coeff_x_y] * (x)):
-                print("coeff_director is :")
                 return -1 * alpha
             else:
                 print("+")
@@ -193,7 +191,6 @@ def resolve_sys_equation(list_xy, coeff_an):
 
 
 
-
 def displays_sys_equation(list_xy, nbrEquation, nbrVar):
     inconnu = ["x", "y", "z","u", "t"]
     
@@ -201,3 +198,16 @@ def displays_sys_equation(list_xy, nbrEquation, nbrVar):
         print("|" , end=" ")
         for j in range(nbrVar) :
             print(f' {list_xy[i][j]} {inconnu[j]}  + ' , end=' ') if j < nbrVar-1  else   print(f' {list_xy[i][j]} {inconnu[j]}  = {list_xy[i][j]}')
+            
+            
+        
+def returnCoeff (system ) :
+    if system[0][0] % system[1][0] == 0 or 0 == system[1][0] % system[0][0]:
+        print("compatible")
+        coeff = coeff_dir_comp(system, 0)
+    else:
+        print("incompatible")
+        coeff = coeff_dir_incomp(system, 0)
+    
+    return coeff
+ 
