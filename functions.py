@@ -39,8 +39,7 @@ def coeff_dir_comp(list_xy, coeff_x_y):
             if list_xy[0][coeff_x_y] == list_xy[1][coeff_x_y] * x:
                 
                 return alpha * -1
-            else:
-                print("+")
+           
     elif list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] == 0 and (
             list_xy[0][coeff_x_y] > 0 > list_xy[1][coeff_x_y]):
         for x in range(list_xy[0][coeff_x_y] + 1 ):
@@ -48,8 +47,7 @@ def coeff_dir_comp(list_xy, coeff_x_y):
             if list_xy[0][coeff_x_y] == list_xy[1][coeff_x_y] * (x * -1):
                 
                 return alpha
-            else:
-                print("+")
+          
 
     elif list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] == 0 and (
             list_xy[0][coeff_x_y] < 0 < list_xy[1][coeff_x_y]):
@@ -57,8 +55,7 @@ def coeff_dir_comp(list_xy, coeff_x_y):
             alpha = x
             if list_xy[0][coeff_x_y] == list_xy[1][coeff_x_y] * (x * -1): 
                 return alpha
-            else:
-                print("+")
+           
 
 
     elif list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] == 0 and (
@@ -67,8 +64,7 @@ def coeff_dir_comp(list_xy, coeff_x_y):
             alpha = x
             if (list_xy[0][coeff_x_y] == list_xy[1][coeff_x_y] * (x)):
                 return -1 * alpha
-            else:
-                print("+")
+             
 
     # the case where x_2 is the mutiple of x_1
 
@@ -80,8 +76,7 @@ def coeff_dir_comp(list_xy, coeff_x_y):
                 print("coeff_director is :")
                 
                 return -1 * alpha
-            else:
-                print("+")
+            
 
     elif list_xy[1][coeff_x_y] % list_xy[0][coeff_x_y] == 0 and (
             list_xy[0][coeff_x_y] < 0 < list_xy[1][coeff_x_y]):
@@ -89,7 +84,7 @@ def coeff_dir_comp(list_xy, coeff_x_y):
         for x in range(list_xy[1][coeff_x_y] + 1 ):
             alpha = x
             if list_xy[1][coeff_x_y] == list_xy[0][coeff_x_y] * (-1 * x):
-                print("coeff_director is :")
+                 
                 print(alpha)
                 return alpha
         
@@ -100,20 +95,18 @@ def coeff_dir_comp(list_xy, coeff_x_y):
         for x in range((-1 * list_xy[1][coeff_x_y]) + 1 +1):
             alpha = x
             if list_xy[1][coeff_x_y] == list_xy[0][coeff_x_y] * (-1 * x):
-                print("coeff_director is :")
+                
                 return alpha
-            else:
-                print("+")
+              
 
     elif list_xy[1][coeff_x_y] % list_xy[0][coeff_x_y] == 0 and (
             list_xy[0][coeff_x_y] > 0 and list_xy[1][coeff_x_y] > 0):
         for x in range((list_xy[1][coeff_x_y]) + 1 +1):
             alpha = x
             if (list_xy[1][coeff_x_y] == list_xy[0][coeff_x_y] * (x)):
-                print("coeff_director is :")
+                 
                 return -1 * alpha
-            else:
-                print("+")
+             
 
     else:
         print("Error - it is  a incompatible situation with this function-1 \n")
