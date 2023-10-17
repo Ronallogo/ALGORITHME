@@ -1,4 +1,4 @@
-system_equation = [[3, 1, 2], [5, 2, 3], [0, 0, 0]]
+system_equation = [[1, 1, 0], [1, 2, -3], [0, 0, 0]]
 
 
 def coeff_dir_comp(list_xy, coeff_x_y):
