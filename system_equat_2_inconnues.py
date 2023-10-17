@@ -196,13 +196,15 @@ def resolve_sys_equation(list_xy, coeff_an):
         print("Error")
 
 
-def displays_sys_equation(list_xy, nbrVar, list_var=None):
+def displays_sys_equation(list_xy, nbrEquation, nbrVar):
     inconnu = ["x", "y", "z","u","t"]
-    for i in range(nbrVar):
-        print(f'| {list_xy[i][0]} {inconnu[0]}  +  {list_xy[i][1]} {inconnu[1]}  = {list_xy[i][2]}  \n')
+    
+    for i in range(nbrEquation):
+        for j in range(nbrVar) :
+            print(f'| {list_xy[i][j]} {inconnu[j]}  + ' , end=' ') if j < nbrVar-1  else   print(f' {list_xy[i][j]} {inconnu[j]}  = {list_xy[i][j]}')
 
 
-displays_sys_equation(system_equation, 2)
+displays_sys_equation(system_equation, 2 , 2)
 if system_equation[0][0] % system_equation[1][0] == 0 or 0 == system_equation[1][0] % system_equation[0][0]:
     print("compatible")
     coeff = coeff_dir_comp(system_equation, 0)
