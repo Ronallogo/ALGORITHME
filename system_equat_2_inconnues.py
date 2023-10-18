@@ -14,7 +14,7 @@ else:
     print("incompatible")
     coeff = coeff_dir_incomp(system_equation, 0)
 resolve_sys_equation(system_equation, coeff)   
-resolve_sys_equation(system_equation, coeff)
+
 
  
  
