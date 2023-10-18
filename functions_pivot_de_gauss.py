@@ -29,27 +29,51 @@ def variable_eliminator(myMatrice , coeff , nbrVar):
     x = [result[0][i] + result[1][i] for i in range(nbrVar)]
     return x
  
- 
- 
- 
- 
-def setSystem(myMatrice):
-    pivot = list()
-    turnExc = 0
-    operator = list()
-    pivot.append(myMatrice[0])
-     
-    operator.append(pivot[0])
-    operator.append(myMatrice[1])
+def returnCoeff(operator) :
     if operator[0][0] % operator[1][0] == 0 or 0 == operator[1][0] % operator[0][0]:
         print("compatible")
         coeff = coeff_dir_comp(operator, 0)
-    else:
+        print(coeff , " <-- coefficient") 
+        return coeff
+    else :
         print("incompatible")
         coeff = coeff_dir_incomp(operator, 0)
-    print(coeff , " <-- coefficient")
+        print(coeff , " <-- coefficient") 
+        return coeff
+ 
+ 
+ 
+def setLines(myMatrice , pivot , index_pivot , index_line):
+   
+    operator = list()
+  
+    operator.append(pivot[index_pivot])
+    operator.append(myMatrice[index_line])
+    coeff = returnCoeff(operator)
     x = variable_eliminator(operator  , coeff , len(pivot[0]))
-    pivot.append(x)
+    operator.clear()
+    return x
+ 
+
+def setSystem_transformation(myMatrice , nbrCoeff):
+    if len(myMatrice) == 1 :
+        exit()
+    elif len(myMatrice) > 2 :
+        pivot = list()
+        turnExc = 1
+        pivot.append(myMatrice[0])
+        while turnExc < len(pivot[0]) - 1:
+            pivot.append( setLines(myMatrice , pivot , 0 ,turnExc))
+            turnExc += 1
+        displays_sys_equation(pivot,nbrEquation=nbrCoeff , nbrVar=nbrCoeff) 
+        result = [x[1::]  for k ,  x in enumerate( pivot) if x != pivot[0]]
+        #result = [x if ]
+        nbrCoeff -= 1
+        print(result)
+        return setSystem_transformation(result ,nbrCoeff )
+    
+
+    
    
   
     
@@ -58,8 +82,8 @@ def setSystem(myMatrice):
  
 mySystem = [[2,2,3,1 ,-1],[4,1,3,0 ,1],[1,4,-1,2 ,0],[1,-1,2,4 ,-2]]
    
-displays_sys_equation(mySystem , 4 ,4)  
-setSystem(mySystem)
+ 
+setSystem_transformation(mySystem , len(mySystem[0]) - 1)
     
     
     
