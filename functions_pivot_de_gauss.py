@@ -55,22 +55,22 @@ def setLines(myMatrice , pivot , index_pivot , index_line):
     return x
  
 
-def setSystem_transformation(myMatrice , nbrCoeff):
+def setSystem_transformation(myMatrice):
     if len(myMatrice) == 1 :
         exit()
-    elif len(myMatrice) > 2 :
-        pivot = list()
-        turnExc = 1
-        pivot.append(myMatrice[0])
-        while turnExc < len(pivot[0]) - 1:
-            pivot.append( setLines(myMatrice , pivot , 0 ,turnExc))
-            turnExc += 1
-        displays_sys_equation(pivot,nbrEquation=nbrCoeff , nbrVar=nbrCoeff) 
-        result = [x[1::]  for k ,  x in enumerate( pivot) if x != pivot[0]]
-        #result = [x if ]
-        nbrCoeff -= 1
-        print(result)
-        return setSystem_transformation(result ,nbrCoeff )
+    
+    pivot = list()
+    turnExc = 1
+    pivot.append(myMatrice[0])
+    while turnExc < len(pivot[0]) - 1:
+        pivot.append( setLines(myMatrice , pivot , 0 ,turnExc))
+        turnExc += 1
+    displays_sys_equation(pivot, 4 ,4) 
+    
+    result = [x[1::]  for k ,  x in enumerate( pivot) if x != pivot[0]]
+    #result = [x if ]
+    print(result)
+    return result
     
 
     
@@ -82,8 +82,8 @@ def setSystem_transformation(myMatrice , nbrCoeff):
  
 mySystem = [[2,2,3,1 ,-1],[4,1,3,0 ,1],[1,4,-1,2 ,0],[1,-1,2,4 ,-2]]
    
- 
-setSystem_transformation(mySystem , len(mySystem[0]) - 1)
+displays_sys_equation(mySystem , 4 ,4)  
+setSystem_transformation(mySystem)
     
     
     
