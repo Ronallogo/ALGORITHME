@@ -1,7 +1,5 @@
-from functions_pivot_de_gauss import *
+from functions_system_equat_2_inconnues import *
 
- 
- 
 
 def variable_eliminator(myMatrice , coeff):
     result = list()
@@ -22,6 +20,9 @@ def variable_eliminator(myMatrice , coeff):
     return result[2]
  
  
+
+    
+
 def setSystem(myMatrice):
     pivot = list()
     turnExc = 0
@@ -41,23 +42,10 @@ def setSystem(myMatrice):
     print(x) 
     pivot.append(x)
     
-    
-    
-    
-    
-    
-mySystem = [[2,2,3,1 , -1 ],[4,1,3,0 , 5],[1,4,-1,2 , 3],[1,-1,2,4 , -2]]
+
+ 
+mySystem = [[2,2,3,1 , -1],[4,1,3,0 , 1],[1,4,-1,2 , 0],[1,-1,2,4 , -2]]
    
 displays_sys_equation(mySystem , 4 ,4)  
 setSystem(mySystem)
     
-    
-    
-    
-        
-            
-     
-    
-    
-    
-
