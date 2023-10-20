@@ -169,28 +169,32 @@ def resolve_sys_equation(list_xy, coeff_an):
        if list_xy[0][0] >= list_xy[1][0]:
             y = (coeff_an * list_xy[0][2] + list_xy[1][2]) / (coeff_an * list_xy[0][1] + list_xy[1][1])
             x = 1 / list_xy[0][0] * (list_xy[0][2] - list_xy[0][1] * y)
-            print("S : {" + f'{x} ; {y} ' + "}")
+            return [x , y]
        else :
             y = ( list_xy[0][2] + coeff_an *list_xy[1][2]) / ( list_xy[0][1] + coeff_an *list_xy[1][1])
             x = 1 / list_xy[0][0] * (list_xy[0][2] - list_xy[0][1] * y)
-            print("S : {" + f'{x} ; {y} ' + "}")
+            return [x , y]
     elif type(coeff_an) == list:
         y = (coeff_an[1]*list_xy[0][2] + list_xy[1][2]*coeff_an[0]) /((coeff_an[1]*list_xy[0][1] + list_xy[1][1]*coeff_an[0]) )
         x =   x = 1 / list_xy[0][0] * (list_xy[0][2] - list_xy[0][1] * y)
-        print("S : {" + f'{x} ; {y} ' + "}")
+        return [x , y]
 
     else:
         print("Error")
 
 def displays_sys_equation(list_xy, nbrEquation, nbrVar):
-    inconnu = ["x", "y", "z","u", "t"]
+    inconnu = ["x", "y"]
+    
     
     for i in range(nbrEquation):
         print("|" , end=" ")
         for j in range(nbrVar) :
             print(f' {list_xy[i][j]} {inconnu[j]}  + ' , end=' ') if j < nbrVar - 1 else   print(f' {list_xy[i][j]} {inconnu[j]}  = {list_xy[i][nbrVar]}')
              
-            
+
+def solutions(solutions) :
+    print("S : {" + f'{solutions[0]} ; {solutions[1]} ' + "}")
+             
                     
 
 
