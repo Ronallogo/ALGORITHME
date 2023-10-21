@@ -2,6 +2,7 @@
 
 def coeff_dir_comp(list_xy, coeff_x_y):
     print("\n------------\n")
+    coeff_x_y = int(coeff_x_y)
     # case where the  module of  x_1 and x_2 and x_1 and _2 is true donc x_1 = x_2 ou x_1 = -1 * x_2
     if list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] == 0 and list_xy[1][coeff_x_y] % list_xy[0][coeff_x_y] == 0:
         # le cas ou x_1 et x_2  > 0
@@ -94,6 +95,7 @@ def coeff_dir_comp(list_xy, coeff_x_y):
 
     elif list_xy[1][coeff_x_y] % list_xy[0][coeff_x_y] == 0 and (
             list_xy[0][coeff_x_y] > 0 > list_xy[1][coeff_x_y]):
+        list_xy[1][coeff_x_y] = int(list_xy[1][coeff_x_y])
         for x in range((-1 * list_xy[1][coeff_x_y]) + 1 +1):
             alpha = x
             if list_xy[1][coeff_x_y] == list_xy[0][coeff_x_y] * (-1 * x):
@@ -183,7 +185,7 @@ def resolve_sys_equation(list_xy, coeff_an):
         print("Error")
 
 def displays_sys_equation(list_xy, nbrEquation, nbrVar):
-    inconnu = ["x", "y"]
+    inconnu = ["x", "y", "z","u", "t"]
     
     
     for i in range(nbrEquation):
