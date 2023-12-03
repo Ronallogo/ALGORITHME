@@ -1,0 +1,5 @@
+n = round(13.9, 1)
+copy= int(n * 10 )
+x =int( copy % 10)
+print(n)
+print(x)

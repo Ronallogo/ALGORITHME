@@ -1,119 +1,122 @@
 
 
 def coeff_dir_comp(list_xy, coeff_x_y):
-    print("\n------------\n")
+    
     coeff_x_y = int(coeff_x_y)
     # case where the  module of  x_1 and x_2 and x_1 and _2 is true donc x_1 = x_2 ou x_1 = -1 * x_2
-    if list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] == 0 and list_xy[1][coeff_x_y] % list_xy[0][coeff_x_y] == 0:
-        # le cas ou x_1 et x_2  > 0
-        if list_xy[0][coeff_x_y] > 0 and list_xy[1][coeff_x_y] > 0:
-            # return -1 si x_1 == x_2
-            return -1 * (list_xy[0][coeff_x_y] * 1 / list_xy[0][coeff_x_y]) if list_xy[0][coeff_x_y] == list_xy[1][
-                coeff_x_y] else print("condition 1-1 not verify")
-        # le cas ou x_1  > 0 et x_2  < 0
-
-        elif list_xy[0][coeff_x_y] > 0 > list_xy[1][coeff_x_y]:
-            # return 1 si x_1 ==  -x_2
-
-            return (list_xy[0][coeff_x_y] / list_xy[0][coeff_x_y]) if list_xy[0][coeff_x_y] == (
-                    -1 * list_xy[1][coeff_x_y]) else print("condition 1-2 not verify")
-        # le cas ou x_1 < 0 et x_2  > 0
-
-        elif list_xy[0][coeff_x_y] < 0 < list_xy[1][coeff_x_y]:
-            # return 1 si x_1 == -x_2
-
-            return (list_xy[0][coeff_x_y] / list_xy[0][coeff_x_y]) if list_xy[0][coeff_x_y] == (
-                    -1 * list_xy[1][coeff_x_y]) else print("condition 1-3 not verify")
-        # le cas ou x_1 et x_2  < 0
-
-        elif list_xy[0][coeff_x_y] < 0 and list_xy[1][coeff_x_y] < 0:
-            # return -1 si x_1 == x_2
-            return -1 * (list_xy[0][coeff_x_y] / list_xy[0][coeff_x_y]) if list_xy[0][coeff_x_y] == list_xy[1][
-                coeff_x_y] else print("condition 1-4 not verify")
-
-            # the case where x_1 is the mutiple of x_2
-    elif list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] == 0 and (
-            list_xy[0][coeff_x_y] > 0 and list_xy[1][coeff_x_y] > 0):
-
-        for x in range(list_xy[0][coeff_x_y] + 1 ):
-            alpha = x
-            if list_xy[0][coeff_x_y] == list_xy[1][coeff_x_y] * x:
-                print("coeff_director is :")
-                return alpha * -1
-            
-    elif list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] == 0 and (
-            list_xy[0][coeff_x_y] > 0 > list_xy[1][coeff_x_y]):
-        for x in range(list_xy[0][coeff_x_y] + 1 ):
-            alpha = x
-            if list_xy[0][coeff_x_y] == list_xy[1][coeff_x_y] * (x * -1):
-                print("coeff_director is :")
-                return alpha
-           
-
-    elif list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] == 0 and (
-            list_xy[0][coeff_x_y] < 0 < list_xy[1][coeff_x_y]):
-        for x in range((-1 * int(list_xy[0][coeff_x_y])) + 1 ):
-            alpha = x
-            if list_xy[0][coeff_x_y] == list_xy[1][coeff_x_y] * (x * -1):
-                print("coeff_director is :")
-                return alpha
-            
-
-
-    elif list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] == 0 and (
-            list_xy[0][coeff_x_y] < 0 and list_xy[1][coeff_x_y] < 0):
-        for x in range((-1 * int(list_xy[0][coeff_x_y])) + 1):
-            alpha = x
-            if (list_xy[0][coeff_x_y] == list_xy[1][coeff_x_y] * (x)):
-                print("coeff_director is :")
-                return -1 * alpha
-          
-
-    # the case where x_2 is the mutiple of x_1
-
-    elif list_xy[1][coeff_x_y] % list_xy[0][coeff_x_y] == 0 and (
-            list_xy[0][coeff_x_y] < 0 and list_xy[1][coeff_x_y] < 0):
-        for x in range((-1 * int(list_xy[1][coeff_x_y])) + 1 ):
-            alpha = x
-            if (list_xy[1][coeff_x_y] == list_xy[0][coeff_x_y] * (x)):
-                print("coeff_director is :")
-                
-                return -1 * alpha
-          
-
-    elif list_xy[1][coeff_x_y] % list_xy[0][coeff_x_y] == 0 and (
-            list_xy[0][coeff_x_y] < 0 < list_xy[1][coeff_x_y]):
-        print("inside123")
-        for x in range(list_xy[1][coeff_x_y] + 1 ):
-            alpha = x
-            if list_xy[1][coeff_x_y] == list_xy[0][coeff_x_y] * (-1 * x):
-                print("coeff_director is :")
-                print(alpha)
-                return alpha
+    #print(list_xy[1][coeff_x_y]  ,  list_xy[0][coeff_x_y])
+    if list_xy[1][coeff_x_y] != 0 and 0 != list_xy[0][coeff_x_y] :
         
+        if list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] == 0 and list_xy[1][coeff_x_y] % list_xy[0][coeff_x_y] == 0 :
+            # le cas ou x_1 et x_2  > 0
+            if list_xy[0][coeff_x_y] > 0 and list_xy[1][coeff_x_y] > 0:
+                # return -1 si x_1 == x_2
+                return -1 * (list_xy[0][coeff_x_y] * 1 / list_xy[0][coeff_x_y]) if list_xy[0][coeff_x_y] == list_xy[1][
+                    coeff_x_y] else print("condition 1-1 not verify")
+            # le cas ou x_1  > 0 et x_2  < 0
+
+            elif list_xy[0][coeff_x_y] > 0 > list_xy[1][coeff_x_y]:
+                # return 1 si x_1 ==  -x_2
+
+                return (list_xy[0][coeff_x_y] / list_xy[0][coeff_x_y]) if list_xy[0][coeff_x_y] == (
+                        -1 * list_xy[1][coeff_x_y]) else print("condition 1-2 not verify")
+            # le cas ou x_1 < 0 et x_2  > 0
+
+            elif list_xy[0][coeff_x_y] < 0 < list_xy[1][coeff_x_y]:
+                # return 1 si x_1 == -x_2
+                return (list_xy[0][coeff_x_y] / list_xy[0][coeff_x_y]) if list_xy[0][coeff_x_y] == (
+                        -1 * list_xy[1][coeff_x_y]) else print("condition 1-3 not verify")
+            # le cas ou x_1 et x_2  < 0
+
+            elif list_xy[0][coeff_x_y] < 0 and list_xy[1][coeff_x_y] < 0:
+                # return -1 si x_1 == x_2
+                return -1 * (list_xy[0][coeff_x_y] / list_xy[0][coeff_x_y]) if list_xy[0][coeff_x_y] == list_xy[1][
+                    coeff_x_y] else print("condition 1-4 not verify")
+
+                # the case where x_1 is the mutiple of x_2
+        elif list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] == 0 and (
+                list_xy[0][coeff_x_y] > 0 and list_xy[1][coeff_x_y] > 0):
+
+            for x in range(list_xy[0][coeff_x_y] + 1 ):
+                alpha = x
+                if list_xy[0][coeff_x_y] == list_xy[1][coeff_x_y] * x:
+                    print("coeff_director is :")
+                    return alpha * -1
+                
+        elif list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] == 0 and (
+                list_xy[0][coeff_x_y] > 0 > list_xy[1][coeff_x_y]):
+            for x in range(list_xy[0][coeff_x_y] + 1 ):
+                alpha = x
+                if list_xy[0][coeff_x_y] == list_xy[1][coeff_x_y] * (x * -1):
+                    print("coeff_director is :")
+                    return alpha
             
 
-    elif list_xy[1][coeff_x_y] % list_xy[0][coeff_x_y] == 0 and (
-            list_xy[0][coeff_x_y] > 0 > list_xy[1][coeff_x_y]):
-        list_xy[1][coeff_x_y] = int(list_xy[1][coeff_x_y])
-        for x in range((-1 * list_xy[1][coeff_x_y]) + 1 +1):
-            alpha = x
-            if list_xy[1][coeff_x_y] == list_xy[0][coeff_x_y] * (-1 * x):
-                print("coeff_director is :")
-                return alpha
-          
+        elif list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] == 0 and (
+                list_xy[0][coeff_x_y] < 0 < list_xy[1][coeff_x_y]):
+            for x in range((-1 * int(list_xy[0][coeff_x_y])) + 1 ):
+                alpha = x
+                if list_xy[0][coeff_x_y] == list_xy[1][coeff_x_y] * (x * -1):
+                    print("coeff_director is :")
+                    return alpha
+                
 
-    elif list_xy[1][coeff_x_y] % list_xy[0][coeff_x_y] == 0 and (
-            list_xy[0][coeff_x_y] > 0 and list_xy[1][coeff_x_y] > 0):
-        for x in range((list_xy[1][coeff_x_y]) + 1 +1):
-            alpha = x
-            if (list_xy[1][coeff_x_y] == list_xy[0][coeff_x_y] * (x)):
-                print("coeff_director is :")
-                return -1 * alpha
+
+        elif list_xy[0][coeff_x_y] % list_xy[1][coeff_x_y] == 0 and (
+                list_xy[0][coeff_x_y] < 0 and list_xy[1][coeff_x_y] < 0):
+            for x in range((-1 * int(list_xy[0][coeff_x_y])) + 1):
+                alpha = x
+                if (list_xy[0][coeff_x_y] == list_xy[1][coeff_x_y] * (x)):
+                    print("coeff_director is :")
+                    return -1 * alpha
             
 
-    else:
-        print("Error - it is  a incompatible situation with this function-1 \n")
+        # the case where x_2 is the mutiple of x_1
+
+        elif list_xy[1][coeff_x_y] % list_xy[0][coeff_x_y] == 0 and (
+                list_xy[0][coeff_x_y] < 0 and list_xy[1][coeff_x_y] < 0):
+            for x in range((-1 * int(list_xy[1][coeff_x_y])) + 1 ):
+                alpha = x
+                if (list_xy[1][coeff_x_y] == list_xy[0][coeff_x_y] * (x)):
+                    print("coeff_director is :")
+                    
+                    return -1 * alpha
+            
+
+        elif list_xy[1][coeff_x_y] % list_xy[0][coeff_x_y] == 0 and (
+                list_xy[0][coeff_x_y] < 0 < list_xy[1][coeff_x_y]):
+            print("inside123")
+            for x in range(list_xy[1][coeff_x_y] + 1 ):
+                alpha = x
+                if list_xy[1][coeff_x_y] == list_xy[0][coeff_x_y] * (-1 * x):
+                    print("coeff_director is :")
+                    print(alpha)
+                    return alpha
+            
+                
+
+        elif list_xy[1][coeff_x_y] % list_xy[0][coeff_x_y] == 0 and (
+                list_xy[0][coeff_x_y] > 0 > list_xy[1][coeff_x_y]):
+            list_xy[1][coeff_x_y] = int(list_xy[1][coeff_x_y])
+            for x in range((-1 * list_xy[1][coeff_x_y]) + 1 +1):
+                alpha = x
+                if list_xy[1][coeff_x_y] == list_xy[0][coeff_x_y] * (-1 * x):
+                    print("coeff_director is :")
+                    return alpha
+            
+
+        elif list_xy[1][coeff_x_y] % list_xy[0][coeff_x_y] == 0 and (
+                list_xy[0][coeff_x_y] > 0 and list_xy[1][coeff_x_y] > 0):
+            for x in range(int(list_xy[1][coeff_x_y]) + 1 +1):
+                alpha = x
+                if (list_xy[1][coeff_x_y] == list_xy[0][coeff_x_y] * (x)):
+                    print("coeff_director is :")
+                    return -1 * alpha
+                
+
+        else:
+            print("Error - it is  a incompatible situation with this function-1 \n")
+    
 
 def coeff_dir_incomp(list_xy, coeff_x_y):
     result_coeff = []
